@@ -207,8 +207,7 @@ namespace Zenject
             // `Container.Bind<GuiRenderer>().FromNewComponentOnNewGameObject().AsSingle().CopyIntoAllSubContainers().NonLazy();`
             _container.Bind(typeof(TickableManager), typeof(InitializableManager), typeof(DisposableManager), typeof(GuiRenderableManager))
                 .ToSelf().AsSingle().CopyIntoAllSubContainers();
-
-            _container.Bind<SignalManager>().AsSingle();
+            
             _container.Bind<Context>().FromInstance(this);
 
             _container.Bind(typeof(ProjectKernel), typeof(MonoKernel))
